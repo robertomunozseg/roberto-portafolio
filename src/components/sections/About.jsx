@@ -4,7 +4,8 @@ export const About = () => {
   const frontendSkills = [
     "React",
     "TypeScript",
-    "CSS",
+    "Next.js",
+    "CSS, SCSS",
     "Material UI",
     "AntD",
   ];
@@ -25,8 +26,11 @@ export const About = () => {
 
           <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
             <p className="text-gray-300 mb-6">
-              Passionate frontend developer with expertise in building scalable web
-              applications and creating innovative solutions.
+            I’m a Senior Front-End Developer with over 15 years of experience in software development. Most of my work has been focused on building web applications using React and modern JavaScript technologies. 
+            I enjoy creating clean, easy-to-maintain interfaces and solving real problems through simple and efficient solutions.
+            <br/>
+            <br/>
+            I’ve worked with cross-functional teams, contributed to improving code quality, and supported other developers through collaboration and mentoring. I’m always interested in learning new tools and working on products that have a real impact on users.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

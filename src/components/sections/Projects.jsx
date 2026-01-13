@@ -14,13 +14,13 @@ export const Projects = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-              <h3 className="text-xl font-bold mb-2"> Pokemons API integration</h3>
+              <h3 className="text-xl font-bold mb-2"> ReactMart</h3>
               <p className="text-gray-400 mb-4">
-                Scalable cloud infrastructure management with real-time
-                monitoring and automated scaling.
+                ReactMart is a modern e-commerce web application built with React, focused on performance, scalability, and a clean user experience. 
+                It features product browsing, cart management, and a responsive design.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Typescript", "Axios Hooks", "Material UI", "React Hook Form" , "API Integration"].map((tech, key) => (
+                {["React", "Typescript", "Axios Hooks", "Next.js", "React Hook Form" , "Tailwind CSS"].map((tech, key) => (
                   <span
                     key={key}
                     className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
@@ -34,8 +34,9 @@ export const Projects = () => {
 
               <div className="flex justify-between items-center">
                 <a
-                  href="#"
+                  href="https://robertomunozseg.github.io/ReactMart/"
                   className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+                  target="_blank"
                 >
                   View Project →
                 </a>
