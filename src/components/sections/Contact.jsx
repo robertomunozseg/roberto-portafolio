@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
+
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,21 +10,42 @@ export const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const [formStatus, setFormStatus] = useState({
+    submmiting: false,
+    success: false,
+    error: false,
+    message: "",
+  });
 
-    emailjs
-      .sendForm(
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log({
+      service: import.meta.env.VITE_SERVICE_ID,
+      template: import.meta.env.VITE_TEMPLATE_ID,
+      publicKey: import.meta.env.VITE_PUBLIC_KEY,
+    });    
+
+    setFormStatus({ submmiting: true, success: false, error: false, message: "" });
+
+    try {
+      await emailjs.send(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
-        e.target,
-        import.meta.env.VITE_PUBLIC_KEY
-      )
-      .then((result) => {
-        alert("Message Sent!");
-        setFormData({ name: "", email: "", message: "" });
-      })
-      .catch(() => alert("Oops! Something went wrong. Please try again."));
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        {
+          publicKey: import.meta.env.VITE_PUBLIC_KEY,
+        },
+      );
+
+       setFormStatus({ submmiting: false, success: true, error: false, message: "Message sent successfully!" });
+       setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      setFormStatus({ submmiting: false, success: false, error: true, message: "Failed to send message. Please try again." });
+    }
   };
 
   return (
@@ -85,10 +107,19 @@ export const Contact = () => {
 
             <button
               type="submit"
+              disabled={formStatus.submmiting}
               className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
             >
-              Send Message
+              {formStatus.submmiting ? "Sending..." : "Send Message"}
             </button>
+
+            {formStatus.message && (
+              <div
+                className={`mt-4 text-center ${formStatus.success ? "text-green-500" : "text-red-500"}`}
+              >
+                {formStatus.message}
+              </div>
+            )}
           </form>
         </div>
       </RevealOnScroll>
