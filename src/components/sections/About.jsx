@@ -76,13 +76,17 @@ export const About = () => {
                   <strong> B.S. in Computer Systems and Information technology </strong> - Universidad Iberoamericana Torréon
                   (2002-2006)
                 </li>
+                <li>
+                  <strong>AWS Certified Developer Associate </strong>
+                  (Feb-2020)
+                </li>                
               </ul>
             </div>
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
               <h3 className="text-xl font-bold mb-4"> 💼 Work Experience </h3>
               <div className="space-y-4 text-gray-300">
                 <div>
-                  <h4 className="font-semibold">
+                  <h4 className="font-bold">
                     {" "}
                    Senior Frontend Developer at Infosys (December 2022 - Present){" "}
                   </h4>
@@ -93,7 +97,7 @@ export const About = () => {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold">
+                  <h4 className="font-bold">
                     {" "}
                     FrontEnd Developer at HCL Techonologies (Apr 2022 - November 2022){" "}
                   </h4>
@@ -102,6 +106,29 @@ export const About = () => {
                     REST APIs
                   </p>
                 </div>
+
+                <div>
+                  <h4 className="font-bold">
+                    {" "}
+                    FrontEnd Developer at John Deere (Nov 2018 - April 2022){" "}
+                  </h4>
+                  <p>
+                    Focused on building responsive, scalable applications using React,
+                    Redux, HTML, and CSS, with secure authentication flows powered by Okta.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-bold">
+                    {" "}
+                    FullStack Developer at Grupo LALA (May 2011 - Nov 2018){" "}
+                  </h4>
+                  <p>
+                    Focused on building web applications using HTML,
+                    JavaScript, jQuery, HTML, CSS, Ajax, and
+                    Drupal for various internal and external systems.
+                  </p>
+                </div>                  
               </div>
             </div>
           </div>
